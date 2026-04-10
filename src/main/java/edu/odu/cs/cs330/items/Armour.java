@@ -77,7 +77,13 @@ public class Armour extends Equippable implements Item
         Armour cpy = new Armour();
 
         // Refer to the previous assignment
-
+        cpy.setName(this.name);
+        cpy.setDurability(this.getDurability());
+        cpy.setDefense(this.getDefense());
+        cpy.setMaterial(this.getMaterial());
+        cpy.setModifier(this.getModifier());
+        cpy.setModifierLevel(this.getModifierLevel());
+        cpy.setElement(this.getElement());
         return cpy;
     }
 
@@ -127,7 +133,14 @@ public class Armour extends Equippable implements Item
     @Override
     public String toString()
     {
-        return "  Refer to the previous assignment...";
+        return String.format(FMT_STR, 
+            super.getName(),
+            this.getDurability(),
+            this.getDefense(),
+            this.getMaterial(),
+            this.getModifier(),
+            this.getModifierLevel(),
+            this.getElement());
     }
 }
 
